@@ -1,36 +1,54 @@
 #include <iostream>
-#include <bitset>
-#include <stdio.h>
-
+#include <cmath>
+#include <fstream>
+ 
 using namespace std;
-
-int main() {
-    
-	int a;
-    int b;
-
-    cin>>a;
-    cin>>b;
-
-    cout<<"a= "<<bitset<8>(a).to_string();
-
-    cout<<"b= "<<bitset<8>(b).to_string();
-
-    cout<<"a|b= "<<bitset<8>(a|b).to_string();
-
-    cout<<"a&b= "<<bitset<8>(a&b).to_string();
-
-    cout<<"a^b= "<<bitset<8>(a^b).to_string();
-
-    cout<<"~a= "<<bitset<8>(~a).to_string();
-
-    cout<<"~b= "<<bitset<8>(~b).to_string();
-
-    cout<<"a<<=4 "<<bitset<8>(a<<=4).to_string();
-
-    cout<<"b>>=1 "<<bitset<8>(b>>=1).to_string();
-    
-    
+ 
+int ilosc, wynik;
+ 
+void czynniki(int n)
+{
+    int g,i;
+    ilosc = 0;
+    g = sqrt(n);
+ 
+    for(i = 2; i <= g; i++)
+    {
+        while(n % i == 0)
+        {
+            ilosc+=i;
+            n /= i;
+        }
+ 
+        if(n == 1)
+        {
+            return;
+        }
+    }
+ 
+}
+int main()
+{
+ 
+	ifstream odczyt("C://liczby.txt");
+ 
+	if(odczyt.is_open())
+	{
+		int n;
+ 
+		while(odczyt>>n)
+		{
+			while (n!=0)
+		    {
+		        czynniki(n);
+		        n = ilosc;
+		        wynik++;
+		    }
+		    cout << wynik << endl;
+		}
+	}
+ 
+ 
     return 0;
 }
 
