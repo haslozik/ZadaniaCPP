@@ -20,7 +20,7 @@ string szyfrowanie(string s, int kl[], int klLen) {
   return s;
 }
 
-void zad1() {
+void z1() {
   ifstream plik("dane1.txt");
   
   string tab[6];
@@ -39,7 +39,7 @@ void zad1() {
   cout << endl;
 }
 
-void zad2() {
+void z2() {
   ifstream plik ("dane2.txt");
   string s;
   plik >> s;
@@ -52,6 +52,6 @@ void zad2() {
 
 
 int main() {
-  zad1();
-  zad2();
+  z1();
+  z2();
 }
