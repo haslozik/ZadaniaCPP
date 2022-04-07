@@ -45,7 +45,7 @@ void z1() {
 	zadaniePierwsze = false;
 }
 
-int main(int argc, char** argv) {
+int main() {
 	z1();
 	return 0;
 }
